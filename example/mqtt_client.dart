@@ -35,6 +35,7 @@ Future<int> main() async {
   /// You can also supply your own websocket protocol list or disable this feature using the websocketProtocols
   /// setter, read the API docs for further details here, the vast majority of brokers will support the client default
   /// list so in most cases you can ignore this.
+  print("hello");
 
   /// Set logging on if needed, defaults to off
   client.logging(on: false);

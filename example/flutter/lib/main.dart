@@ -17,7 +17,14 @@ class _MyAppState extends State<MyApp> {
   PageController _pageController;
   int _page = 0;
 
-  String broker = 'test.mosquitto.org';
+  //String broker = 'test.mosquitto.org';
+  String broker = 'io.adafruit.com';
+  String ioKey = '556280f5b0c3a0587ad072ece406fdbf37d37617';
+  // See https://learn.adafruit.com/mqtt-adafruit-io-and-you/intro-to-adafruit-mqtt#publishing-5-12
+  // for info on feed names on adafruit.io
+  // See https://accounts.adafruit.com/
+  // for your username on adafruit.com
+  String aioFeed = 'sketchy/feeds/test';
   mqtt.MqttClient client;
   mqtt.MqttConnectionState connectionState;
 
@@ -286,7 +293,7 @@ class _MyAppState extends State<MyApp> {
     /// The client identifier can be a maximum length of 23 characters. If a port is not specified the standard port
     /// of 1883 is used.
     /// If you want to use websockets rather than TCP see below.
-    client = mqtt.MqttClient(broker, '');
+    client = mqtt.MqttClient(broker, ioKey);
 
     /// A websocket URL must start with ws:// or wss:// or Dart will throw an exception, consult your websocket MQTT broker
     /// for details.
